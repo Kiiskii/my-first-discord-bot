@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Text;
 using DSharpPlus;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace my_first_discord_bot
 {
@@ -12,12 +14,21 @@ namespace my_first_discord_bot
         }
         static async Task MainAsync()
         {
+            var json = string.Empty;
+
+            using (var fs = File.OpenRead("config.json"))
+            using (var sr = new StreamReader(fs, new UTF8Encoding(false)))
+                json = await sr.ReadToEndAsync().ConfigureAwait(false);
+
+            var configJson = JsonConvert.DeserializeObject<ConfigJson>(json);
+
             var discord = new DiscordClient(new DiscordConfiguration()
-            {
-                Token = "",
+                {
+                Token = configJson.Token,
                 TokenType = TokenType.Bot,
+                AutoReconnect = true,
                 Intents = DiscordIntents.AllUnprivileged
-            });
+                });
 
             discord.MessageCreated += async (s, e) =>
             {
