@@ -8,4 +8,23 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="DSharpPlus" />
+    <None Remove="DSharpPlus.CommandsNext" />
+    <None Remove="DSharpPlus.Interactivity" />
+    <None Remove="DSharpPlus.VoiceNext" />
+    <None Remove="DSharpPlus.SlashCommands" />
+    <None Remove="DSharpPlus.Rest" />
+    <None Remove="DSharpPlus.Lavalink" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DSharpPlus" Version="4.2.0" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="4.2.0" />
+    <PackageReference Include="DSharpPlus.Interactivity" Version="4.2.0" />
+    <PackageReference Include="DSharpPlus.VoiceNext" Version="4.2.0" />
+    <PackageReference Include="DSharpPlus.SlashCommands" Version="4.2.0" />
+    <PackageReference Include="DSharpPlus.Rest" Version="4.2.0" />
+    <PackageReference Include="DSharpPlus.Lavalink" Version="4.2.0" />
+  </ItemGroup>
 </Project>
