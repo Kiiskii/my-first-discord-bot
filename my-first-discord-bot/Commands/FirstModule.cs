@@ -12,6 +12,11 @@ namespace my_first_discord_bot.Commands
 		{
 			await ctx.RespondAsync("Ayo wassup!");
 		}
+		[Command("domi")]
+		public async Task DomiCute(CommandContext ctx)
+		{
+			await ctx.RespondAsync("Yes, Domi is very cute.");
+		}
 	}
 }
 

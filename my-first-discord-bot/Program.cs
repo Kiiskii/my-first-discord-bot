@@ -30,7 +30,7 @@ namespace my_first_discord_bot
                 Token = configJson.Token,
                 TokenType = TokenType.Bot,
                 AutoReconnect = true,
-                Intents = DiscordIntents.AllUnprivileged,
+                Intents = DiscordIntents.All,
                 MinimumLogLevel = LogLevel.Debug,
                 LogTimestampFormat = "MMM dd yyyy - hh:mm:ss tt"
             });
@@ -43,14 +43,14 @@ namespace my_first_discord_bot
             commands.RegisterCommands<FirstModule>();
 
 
-            /*
+            
             discord.MessageCreated += async (s, e) =>
             {
                 string contentMessage = e.Message.Content.ToLower();
                 if (contentMessage.StartsWith("ping"))
                     await e.Message.RespondAsync("pong!");
             };
-            */
+            
 
             await discord.ConnectAsync();
             await Task.Delay(-1);
