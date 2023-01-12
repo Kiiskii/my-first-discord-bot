@@ -1,3 +1,4 @@
+/Users/s2200694/Projects/my-first-discord-bot/my-first-discord-bot/bin/Debug/net7.0/config.json
 /Users/s2200694/Projects/my-first-discord-bot/my-first-discord-bot/bin/Debug/net7.0/my-first-discord-bot
 /Users/s2200694/Projects/my-first-discord-bot/my-first-discord-bot/bin/Debug/net7.0/my-first-discord-bot.deps.json
 /Users/s2200694/Projects/my-first-discord-bot/my-first-discord-bot/bin/Debug/net7.0/my-first-discord-bot.runtimeconfig.json
