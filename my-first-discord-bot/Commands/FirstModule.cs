@@ -18,11 +18,20 @@ namespace my_first_discord_bot.Commands
 			await ctx.RespondAsync("Yes, Domi is very cute.");
 		}
 
-		// Program a command that lets the user set the bot to remind about users input by sending a personal message
+		// Command to send a personal message to a user
+		[Command("whisper")]
+		public async Task WhisperCommand(CommandContext ctx)
+		{
+			await ctx.Member.SendMessageAsync("Fuck you :middle_finger:");
+		}
+
+		// Program a command that lets the user set the bot to remind 
+		
 		[Command("remind")]
 		public async Task Remind(CommandContext ctx, int min, string subj)
 		{
-			await ctx.RespondAsync(Reminder(min, subj));
+			await ctx.RespondAsync($"Ok, I'll remind you about {subj} in {min} minutes. :ok_hand:");
+
 		}
 	}
 }
