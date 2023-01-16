@@ -25,6 +25,7 @@ namespace my_first_discord_bot
 
             var configJson = JsonConvert.DeserializeObject<ConfigJson>(json);
 
+            // Configuration for the bot
             var discord = new DiscordClient(new DiscordConfiguration()
                 {
                 Token = configJson.Token,
@@ -35,15 +36,17 @@ namespace my_first_discord_bot
                 LogTimestampFormat = "MMM dd yyyy - hh:mm:ss tt"
             });
 
+            // Set prefix for commands
             var commands = discord.UseCommandsNext(new CommandsNextConfiguration()
             {
                 StringPrefixes = new[] { "!" }
             });
 
+            // Call FirstModule, which has commands in it
             commands.RegisterCommands<FirstModule>();
 
 
-            
+            // Test for bot functionality
             discord.MessageCreated += async (s, e) =>
             {
                 string contentMessage = e.Message.Content.ToLower();
